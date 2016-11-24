@@ -6,9 +6,9 @@ const Cart = (props) =>
     <h3>Here is the cart: </h3>
     <ul>
       {
-        Object.keys(props.state.cart).map((id) => {
-         return <li>{props.state.products[id].name}
-                     <p>Qty: {props.state.cart[id]}</p>
+        Object.keys(props.state.cart).map((item, index) => {
+         return <li>{props.state.products[index].name}
+                     <p>Qty: {props.state.cart[index]} Price: ${(props.state.products[index].price)* props.state.cart[index]}</p>
                 </li>
       })}
     </ul>

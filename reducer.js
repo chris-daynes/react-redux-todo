@@ -18,6 +18,8 @@ module.exports = (state, action) => {
         delete cart[productId]
       }
       return newState
+
+
     default:
       return newState
 

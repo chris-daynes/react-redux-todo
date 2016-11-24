@@ -20,14 +20,13 @@ const initialState = {
 }
 
 var main = document.querySelector('main')
-
 const { dispatch, subscribe, getState } = createStore(reducer, initialState)
 
 
 subscribe(() => {
   const state = getState()
   render(
-    <div>
+    <div className='container'>
       <Products state = {state} dispatch = {dispatch}/>
       <Cart state = {state} />
     </div> , main)

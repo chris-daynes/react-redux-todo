@@ -11,6 +11,8 @@ const Products = (props) =>
       {props.state.products.map((product) => {
           return <li>
                     {product.name}:  ${product.price}
+                    <button onClick = {() => props.dispatch({type: 'ADD_ITEM', payload})}>Add Item</button>
+                    <button>Delete Item</button>
                 </li>
           })
       }

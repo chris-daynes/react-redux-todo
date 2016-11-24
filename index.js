@@ -28,7 +28,7 @@ subscribe(() => {
   const state = getState()
   render(
     <div>
-      <Products state = {state} />
+      <Products state = {state} dispatch = {dispatch}/>
       <Cart state = {state} />
     </div> , main)
 })

@@ -5,16 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "budo index.js --serve bundle.js --live --port 4000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "browserify ./test/*js | node | tap-spec"
   },
-  "browserify":{
-    "transform":[
+  "browserify": {
+    "transform": [
       "babelify"
     ]
   },
-  "babel":{
-    "presets":[
-      "es2015", "react"
+  "babel": {
+    "presets": [
+      "es2015",
+      "react"
     ]
   },
   "keywords": [],
@@ -26,8 +27,13 @@
     "babelify": "^7.3.0",
     "budo": "^9.2.2",
     "clone": "^2.1.0",
+    "deep-freeze": "0.0.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
     "redux": "^3.6.0"
+  },
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.3"
   }
 }

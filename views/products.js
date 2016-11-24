@@ -14,7 +14,10 @@ const Products = (props) =>
                   <button onClick= {
                     () => props.dispatch({type: 'ADD_ITEM', payload: product.id})}
                   >Add Item</button>
-                  <button>Delete Item</button>
+
+                  <button onClick={
+                    () => props.dispatch({type: 'REMOVE_ITEM', payload: product.id})}
+                  >Delete Item</button>
               </li>
         })
     }

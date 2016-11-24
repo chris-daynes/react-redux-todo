@@ -17,7 +17,7 @@ test('ADD_ITEM adds one when that item is not in the cart', (t) => {
       {id: 1, name: 'Motorhead', price: 20}
     ],
     cart: {
-      0: 2,
+      0: 0,
       1: 0
     }
   }
@@ -31,7 +31,7 @@ test('ADD_ITEM adds one when that item is not in the cart', (t) => {
       {id: 1, name: 'Motorhead', price: 20}
     ],
     cart: {
-      0: 3,
+      0: 1,
       1: 0
     }
   }

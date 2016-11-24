@@ -1,27 +1,29 @@
 const React = require('react')
 const {render} = require('react-dom')
 const {createStore} = require('redux')
+const { createFragment} = require('react')
 
-const reducer = require('./reducer');
+
+const reducer = require('./reducer')
+const Products = require('./views/products')
 
 const initialState = {
-  counter: 5
+  products: [
+    {id: 0, name: 'Metallica', price: 10},
+    {id: 1, name: 'Motorhead', price: 20}
+  ]
 }
 
 var main = document.querySelector('main')
 
 const {dispatch, subscribe, getState} = createStore(reducer, initialState)
 
-const Counter = (props) =>
- <div onClick= {props.increment}>
-    <h1>Counter: {props.state.counter}</h1>
-  </div>
-
 
 subscribe(() => {
   const state = getState()
-  render(<Counter state={state}
-      increment={() => dispatch({type: 'INCREMENT'})}
+  render(<Products
+    state = {state}
+
      />, main)
 })
 
